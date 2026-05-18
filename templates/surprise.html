@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-container surprise-page">
+    <div class="stars-bg"></div>
+    <div class="clouds-bg"></div>
+    
+    <!-- Final Surprise View -->
+    <div id="final-surprise" class="final-surprise-container">
+        <!-- Confetti Canvas -->
+        <canvas id="confetti-canvas"></canvas>
+        
+        <div class="celebration-content zoom-in">
+            <!-- Cute Puppy Image -->
+            <img src="{{ url_for('static', filename='images/white_dog.png') }}" class="celebration-mascot" alt="Happy Puppy">
+            
+            <div id="final-typewriter" class="typewriter-container">
+                <!-- Text typed by JS -->
+            </div>
+            
+            <div class="nav-controls fade-in-up" style="margin-top: 50px; animation-delay: 3s;">
+                <a href="{{ url_for('analytics') }}" class="nav-btn btn-secondary">&larr; Back to Stats</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional Background Music -->
+    <!-- <audio id="bg-music" loop>
+        <source src="{{ url_for('static', filename='audio/romantic_song.mp3') }}" type="audio/mpeg">
+    </audio> -->
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-container landing-page">
+    <div class="stars-bg"></div>
+    <div class="clouds-bg"></div>
+    
+    <div class="floating-elements">
+        <div class="floating-item heart-blue" style="animation-delay: 1s; left: 10%;">💙</div>
+        <div class="floating-item paw-print" style="animation-delay: 2.5s; left: 25%;">🐾</div>
+        <div class="floating-item heart-light" style="animation-delay: 4s; left: 40%;">🩵</div>
+        <div class="floating-item paw-print" style="animation-delay: 1.5s; left: 65%;">🐾</div>
+        <div class="floating-item heart-blue" style="animation-delay: 5s; left: 80%;">💙</div>
+        <div class="floating-item heart-light" style="animation-delay: 3s; left: 90%;">🤍</div>
+    </div>
+    
+    <div class="landing-content">
+        <div class="mascot-container">
+            <!-- Puppies image placeholder -->
+            <img src="{{ url_for('static', filename='images/puppies.jpg') }}" alt="Cute Puppies">
+        </div>
+
+        <div class="terminal-box glass-panel">
+            <div class="typewriter-container" id="typewriter-container">
+                <!-- Text will be typed here by JS -->
+            </div>
+            
+            <div class="action-btn-container hidden" id="start-btn-container">
+                <a href="{{ url_for('memories') }}" class="glowing-btn">Start the Journey</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

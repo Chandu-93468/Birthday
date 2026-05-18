@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-container page-with-nav">
+    <div class="stars-bg"></div>
+    <div class="clouds-bg"></div>
+
+    <div class="content-wrapper">
+        <h1 class="page-title fade-in-up">Our Memory Timeline 💙</h1>
+
+        <div class="timeline-container">
+            <!-- Card 1 -->
+            <div class="memory-card glass-panel bounce-in hidden-element">
+                <div class="memory-img-placeholder">
+                    <!-- ADD YOUR IMAGE HERE -->
+                    <img src="{{ url_for('static', filename='images/first_conversation.jpeg') }}"
+                        alt="First Conversation">
+                    <!-- <div class="dog-sticker">🐶</div> -->
+                </div>
+                <div class="memory-content">
+                    <h2>First Conversation</h2>
+                    <p>It started by mistake, but now I can’t imagine life without you.Your eyes are my favorite place
+                        to get lost 💙</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 200ms;">
+                <div class="memory-img-placeholder">
+                    <!-- ADD YOUR IMAGE HERE -->
+                    <img src="{{ url_for('static', filename='images/favorite_memory.jpg') }}" alt="Favorite Memory">
+                </div>
+                <div class="memory-content">
+                    <h2>Favorite Memory</h2>
+                    <p>I called you after drinking and accidentally said “darling",I felt nervous that day, but now it
+                        became one of my favorite memories 💙</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 100ms;">
+                <div class="memory-img-placeholder">
+                    <!-- ADD YOUR IMAGE HERE -->
+                    <img src="{{ url_for('static', filename='images/best_moment.jpg') }}" alt="Best Moment"
+                        onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=400&q=80';">
+                    <!-- <div class="dog-sticker"></div> -->
+                </div>
+                <div class="memory-content">
+                    <h2>Best Moment Together</h2>
+                    <p>That birthday became my favorite memory,Celebrating with you was the best gift 💙</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 300ms;">
+                <div class="memory-img-placeholder">
+                    <!-- ADD YOUR IMAGE HERE -->
+                    <img src="{{ url_for('static', filename='images/things_i_like.jpg') }}" alt="Things I Like"
+                        onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=400&q=80';">
+                    <div class="dog-sticker">💙</div>
+                </div>
+                <div class="memory-content">
+                    <h2>Things I Like About You</h2>
+                    <p>U always spreads positive energy wherever you go,I love the way you care about me 💙</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-controls fade-in-up">
+            <a href="{{ url_for('landing') }}" class="nav-btn btn-secondary">&larr; Back</a>
+            <a href="{{ url_for('analytics') }}" class="nav-btn glowing-btn">Next &rarr;</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

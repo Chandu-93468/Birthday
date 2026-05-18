@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-container page-with-nav analytics-page-bg">
+    <!-- Magical Particles Layers -->
+    <div class="stars-bg"></div>
+    <div class="clouds-bg"></div>
+    <div class="particle-rain" id="heart-rain"></div>
+    <div class="particle-sparkles" id="sparkles"></div>
+    
+    <div class="content-wrapper analytics-wrapper">
+        <h1 class="page-title title-glow fade-in-up">Relationship Analytics 🐾</h1>
+        <p class="analytics-subtitle fade-in-up" style="animation-delay: 0.1s;">My heart completed its search... and found you 💙</p>
+        
+        <!-- Floating Text Bubbles -->
+        <div class="floating-bubbles">
+            <div class="bubble b1">You are my favorite notification 💙</div>
+            <div class="bubble b2">My happiness starts with you 💙</div>
+            <div class="bubble b3">Your eyes are my favorite place to get lost 💙</div>
+            <div class="bubble b4">You = Peace + Happiness 💙</div>
+        </div>
+        
+        <!-- Tiny Puppy Trail -->
+        <div class="puppy-trail">
+            <span>🐶 following love trail...</span>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="stat-card glass-panel bounce-in hidden-element">
+                <div class="stat-icon">📅</div>
+                <div class="stat-value"><span class="counter-infinite" data-target="9999" data-final="Infinite">0</span></div>
+                <div class="stat-label">Days of Happiness</div>
+            </div>
+
+            <div class="stat-card glass-panel bounce-in hidden-element" style="transition-delay: 50ms;">
+                <div class="stat-icon">😂</div>
+                <div class="stat-value"><span class="counter-infinite" data-target="9999" data-final="Unlimited">0</span></div>
+                <div class="stat-label">Laugh Count</div>
+            </div>
+
+            <div class="stat-card glass-panel bounce-in hidden-element highlight-card" style="transition-delay: 100ms;">
+                <div class="stat-icon">🐶</div>
+                <div class="stat-value text-accent">{{ favorite_human }}</div>
+                <div class="stat-label">Favorite Human Detected 💙</div>
+            </div>
+
+            <div class="stat-card glass-panel bounce-in hidden-element" style="transition-delay: 150ms;">
+                <div class="stat-icon">✨</div>
+                <div class="stat-value">Active</div>
+                <div class="stat-label">Smile Generator</div>
+            </div>
+
+            <div class="stat-card glass-panel bounce-in hidden-element" style="transition-delay: 200ms;">
+                <div class="stat-icon">💙</div>
+                <div class="stat-value text-accent"><span class="counter" data-target="100">0</span>%</div>
+                <div class="stat-label">Puppy Love Level</div>
+            </div>
+        </div>
+
+        <!-- Large Happiness Meter -->
+        <div class="happiness-meter-container glass-panel bounce-in hidden-element" style="transition-delay: 250ms;">
+            <div class="hm-header">
+                <h3>💙 Happiness Level</h3>
+                <h3 class="hm-value"><span class="counter" data-target="100">0</span>%</h3>
+            </div>
+            <div class="progress-bar-container large-progress">
+                <div class="progress-bar-fill glowing-fill"></div>
+            </div>
+        </div>
+
+        <div class="nav-controls fade-in-up" style="animation-delay: 0.3s;">
+            <a href="{{ url_for('memories') }}" class="nav-btn btn-secondary">&larr; Back</a>
+            <a href="{{ url_for('surprise') }}" class="nav-btn glowing-btn">Reveal Surprise &rarr;</a>
+        </div>
+
+        <div class="cute-footer fade-in-up" style="animation-delay: 0.5s;">
+            Developed with endless love for Badam Sravya 💙
+        </div>
+    </div>
+</div>
+{% endblock %}
