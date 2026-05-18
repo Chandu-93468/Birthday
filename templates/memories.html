@@ -10,7 +10,7 @@
 
         <div class="timeline-container">
             <!-- Card 1 -->
-            <div class="memory-card glass-panel bounce-in hidden-element">
+            <div class="memory-card glass-panel bounce-in hidden-element" data-audio="{{ url_for('static', filename='audio/clip1.mp3') }}" title="Click to play memory song">
                 <div class="memory-img-placeholder">
                     <!-- ADD YOUR IMAGE HERE -->
                     <img src="{{ url_for('static', filename='images/first_conversation.jpeg') }}"
@@ -25,7 +25,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 200ms;">
+            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 200ms;" data-audio="{{ url_for('static', filename='audio/clip2.mp3') }}" title="Click to play memory song">
                 <div class="memory-img-placeholder">
                     <!-- ADD YOUR IMAGE HERE -->
                     <img src="{{ url_for('static', filename='images/favorite_memory.jpg') }}" alt="Favorite Memory">
@@ -38,7 +38,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 100ms;">
+            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 100ms;" data-audio="{{ url_for('static', filename='audio/clip3.mp3') }}" title="Click to play memory song">
                 <div class="memory-img-placeholder">
                     <!-- ADD YOUR IMAGE HERE -->
                     <img src="{{ url_for('static', filename='images/best_moment.jpg') }}" alt="Best Moment"
@@ -52,7 +52,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 300ms;">
+            <div class="memory-card glass-panel bounce-in hidden-element" style="transition-delay: 300ms;" data-audio="{{ url_for('static', filename='audio/clip4.mp3') }}" title="Click to play memory song">
                 <div class="memory-img-placeholder">
                     <!-- ADD YOUR IMAGE HERE -->
                     <img src="{{ url_for('static', filename='images/things_i_like.jpg') }}" alt="Things I Like"
@@ -71,5 +71,8 @@
             <a href="{{ url_for('analytics') }}" class="nav-btn glowing-btn">Next &rarr;</a>
         </div>
     </div>
+    
+    <!-- Audio player for memory cards -->
+    <audio id="memory-audio-player"></audio>
 </div>
 {% endblock %}

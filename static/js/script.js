@@ -80,6 +80,36 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // --- Page 2: Memory Cards Audio Playback ---
+    const memoryCards = document.querySelectorAll('.memory-card');
+    const memoryAudioPlayer = document.getElementById('memory-audio-player');
+    let currentlyPlayingSrc = null;
+    
+    if (memoryCards.length > 0 && memoryAudioPlayer) {
+        memoryCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const audioSrc = card.getAttribute('data-audio');
+                if (audioSrc && audioSrc !== currentlyPlayingSrc) {
+                    currentlyPlayingSrc = audioSrc;
+                    
+                    // Add a tiny visual feedback
+                    card.style.transform = 'scale(0.98)';
+                    setTimeout(() => card.style.transform = '', 150);
+                    
+                    // Stop playing current song if any
+                    memoryAudioPlayer.pause();
+                    memoryAudioPlayer.currentTime = 0;
+                    
+                    // Set new source and play
+                    memoryAudioPlayer.src = audioSrc;
+                    memoryAudioPlayer.play().catch(e => {
+                        console.log("Audio play failed, might need user interaction first: ", e);
+                    });
+                }
+            });
+        });
+    }
+
     // --- Counter Animation function ---
     function animateCounter(el) {
         const target = +el.getAttribute('data-target');
@@ -128,6 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const finalTypewriter = document.getElementById('final-typewriter');
         if (finalTypewriter) {
              const finalLines = [
+                "I didn’t know your dog, but I know your heart is hurting.",
+                "I miss you… and after our marriage, I’ll bring a cute dog for you",
+                "and protect your smile too 🤍🐶",
                 "Happy Birthday SRAVYA 💙✨",
                 "To the most beautiful and sweetest girl,",
                 "You make every single day magical.",
@@ -142,8 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (flIndex < finalLines.length) {
                     if (fcIndex === 0) {
                         fEl = document.createElement('div');
-                        if (flIndex === 0) {
+                        if (flIndex === 3) {
                             fEl.className = 'giant-text';
+                        } else if (flIndex < 3) {
+                            fEl.className = 'small-emotional-text';
                         } else {
                             fEl.className = 'emotional-text';
                         }
